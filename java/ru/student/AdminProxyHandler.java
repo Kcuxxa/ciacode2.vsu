@@ -17,7 +17,7 @@ public class AdminProxyHandler implements InvocationHandler {
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         String methodName = method.getName();
         boolean allowed = Permissions.isAllowed(user.getRole(), methodName);
-        String verdict = allowed ? "Разрешено" : "Запрещено";
+        String verdict = allowed ? "ALLOWED" : "DENIED";
         String logEntry = user.getName() + " - " + methodName + " - " + verdict;
         auditLog.record(logEntry);
         if(!allowed){

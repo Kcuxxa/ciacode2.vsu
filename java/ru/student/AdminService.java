@@ -18,8 +18,8 @@ public class AdminService implements IAdminService{
     }
     @Override
     public String readAuditLog() {
-        System.out.println("Чтене журнала действий:");
-        return readAuditLog();
+        System.out.println("[AdminService] Чтение журнала действий");
+        return "журнал действий (заглушка)";
     }
     public int getBanUserCount() {
         return banUserCount;
